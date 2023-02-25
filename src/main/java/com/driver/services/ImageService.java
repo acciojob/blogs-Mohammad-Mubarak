@@ -23,7 +23,7 @@ public class ImageService {
         Image image = new Image();
 
         image.setDescription(description);
-        image.setDimension(dimensions);
+        image.setDimensions(dimensions);
         currentImages.add(image);
         blogRepository2.save(blog);
         //Here I am not explicitly adding image in image-repository because due to cascading effect
@@ -43,7 +43,7 @@ public class ImageService {
 //        }
         Image image = imageRepository2.findById(id).get();
 
-        String imageDimensions = image.getDimension();
+        String imageDimensions = image.getDimensions();
         String [] imgarray = imageDimensions.split("X");
 
         int scrl = Integer.parseInt(scrarray[0]); //A -- > integer
